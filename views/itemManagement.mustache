@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Item Management</title>
+</head>
+<body>
+  <h1>Item Management</h1>
+  <form action="/admin/items" method="POST">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+    </div>
+    <div>
+      <label for="expiryDate">Expiry Date:</label>
+      <input type="date" id="expiryDate" name="expiryDate" required>
+    </div>
+    <button type="submit">Add Item</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Expiry Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#items}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{description}}</td>
+        <td>{{expiryDate}}</td>
+        <td>
+          <form action="/admin/items/{{_id}}/delete" method="POST">
+            <input type="hidden" name="_csrf" value="{{../csrfToken}}">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {{/items}}
+    </tbody>
+  </table>
+</body>
+</html>

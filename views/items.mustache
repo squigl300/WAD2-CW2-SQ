@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Available Items</title>
+</head>
+<body>
+  <h1>Available Items</h1>
+  {{#items}}
+    <div>
+      <h2>{{name}}</h2>
+      <p>{{description}}</p>
+      <p>Expiry Date: {{expiryDate}}</p>
+      <form action="/items/{{_id}}/select" method="POST">
+        <button type="submit">Select</button>
+      </form>
+    </div>
+  {{/items}}
+  <a href="/items/create">Create New Item</a>
+</body>
+</html>
