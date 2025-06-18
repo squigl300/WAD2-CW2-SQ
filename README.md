@@ -21,20 +21,6 @@ Usage
 •	Contact the administrators using the contact form.
 5.	Admin users can access the admin dashboard to manage users and items.
 
-Contributing
-If you'd like to contribute to this project, please follow these steps:
-1.	Fork the repository.
-2.	Create a new branch for your feature or bug fix.
-3.	Make your changes and commit them with descriptive messages.
-4.	Push your changes to your forked repository.
-5.	Submit a pull request to the main repository.
-License
-This project is licensed under the MIT License.
-Contact
-If you have any questions or suggestions, please feel free to contact us at squigl300@caledonian.ac.uk
-
-
-
 List of implemented Features
 
 1.	User Registration:
@@ -71,8 +57,6 @@ List of implemented Features
 •	CSRF protection is implemented using the csurf middleware.
 •	Helmet middleware is used to add security headers to the application.
 •	User passwords are hashed using bcrypt before storing in the database.
-
-
 
 
 8.	Error Handling:
